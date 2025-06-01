@@ -1,26 +1,45 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
-int main()
-{
+
+struct Activity {
+    string name;
+    double start;
+    double end;
+};
+
+// Comparator function to sort activities by end time
+bool compare(Activity a, Activity b) {
+    return a.end < b.end;
+}
+
+int main() {
     int n;
-    cin>>n;
-    vector<vector<int>>v;
-    for(int i=0; i<n; i++)
-    {
-        int start,end;
-        cin>>start>>end;
-        v.push_back({start,end});
+    cout << "Enter number of activities: ";
+    cin >> n;
+
+    Activity a[n];
+
+    // Input activities
+    for (int i = 0; i < n; i++) {
+        cout << "Enter name, start time, and end time of activity " << i + 1 << ": ";
+        cin >> a[i].name >> a[i].start >> a[i].end;
     }
-    sort(v.begin(),v.end(),[&](vector<int> &a, vector<int> &b){
-        return a[1] < b[1];
-    });
-    int take = 1;
-    int end = v[0][1];
-    for(int i=1; i<n; i++)
-    {
-        if(v[i][0] >= end)
-            take++;
-        end= v[i][1];
+
+    // Sort activities by end time
+    sort(a, a + n, compare);
+
+    cout << "\nSelected activities:\n";
+
+    // Select the first activity
+    double lastEnd = -1;
+
+    for (int i = 0; i < n; i++) {
+        if (a[i].start >= lastEnd) {
+            cout << a[i].name << " (" << a[i].start << ", " << a[i].end << ")\n";
+            lastEnd = a[i].end;
+        }
     }
-    cout<<take<<"\n";
+
+    return 0;
 }
