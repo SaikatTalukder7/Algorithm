@@ -6,13 +6,12 @@ struct Activity {
     double start;
     double end;
 };
-
 // Comparator function to sort activities by end time
 bool compare(Activity a, Activity b) {
     return a.end < b.end;
 }
-
-int main() {
+int main() 
+{
     int n;
     cout << "Enter number of activities: ";
     cin >> n;
@@ -39,6 +38,5 @@ int main() {
             lastEnd = a[i].end;
         }
     }
-
     return 0;
 }
