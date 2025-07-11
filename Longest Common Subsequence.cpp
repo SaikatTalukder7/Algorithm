@@ -41,6 +41,16 @@ int main()
             }
         }
     }
+    // this loop is for Dp table
+    cout<<"\nDP Table (arr):\n";
+    for(int i=0; i<=n; i++)
+    {
+        for(int j=0; j<=m; j++)
+        {
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }//end of dp table loop
     cout<<"The LCS length is:"<<arr[n][m]<<endl;
     int i=n, j=m;
     vector<char>s;
