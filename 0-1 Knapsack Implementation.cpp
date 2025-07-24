@@ -6,7 +6,6 @@ struct item
     string name;
     int price, weight;
 };
-
 int main()
 {
     int n, cap;
@@ -44,7 +43,6 @@ int main()
     }
 
     cout << arr[n][cap]<< endl;
-
 
     int val = arr[n][cap];
     int i = n, j = cap;
