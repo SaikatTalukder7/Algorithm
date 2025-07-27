@@ -20,7 +20,6 @@ int main()
         adj[a].push_back(b);
         adj[b].push_back(a);
     }
-
     cout << "Enter the starting node: ";
     cin >> start_node;
 
