@@ -20,6 +20,7 @@ int main()
         adj[a].push_back(b);
         adj[b].push_back(a);
     }
+
     cout << "Enter the starting node: ";
     cin >> start_node;
 
@@ -33,10 +34,10 @@ int main()
     cout << "DFS result: " << endl;
     while(!st.empty())
     {
-        int fr = st.top(); // changed from front() to top()
+        int fr = st.top();
         st.pop();
         cout << fr << endl;
-        for(int i=adj[fr].size()-1; i>=0; i--) // reverse for DFS order
+        for(int i=0; i<adj[fr].size(); i++)
         {
             if(!visit[adj[fr][i]])
             {
