@@ -44,6 +44,7 @@ int prims(int st)
     }
     return tot;
 }
+
 int main()
 {
     int st,n,m,x,y,z;
@@ -60,3 +61,4 @@ int main()
     cout<<"Total Cost of MST = "<<prims(st)<<"\n";
     return 0;
 }
+
